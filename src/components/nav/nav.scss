@@ -1,0 +1,127 @@
+@import "../../variables.scss";
+
+.nav-bar {
+  padding: 20px 0;
+  min-width: 250px;
+  max-width: 280px;
+  font-size: 15px;
+  position: fixed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .scroll {
+    overflow-y: auto;
+    flex-grow: 1;
+    margin-top: 20px;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      position: absolute;
+    }
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+
+  .item {
+    width: 100%;
+    padding: 0 25px;
+    color: $dark;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+
+    .t-icon {
+      font-size: 20px;
+      color: $deep-gray;
+      width: 40px;
+      text-align: start;
+    }
+  }
+
+  .submenu {
+    &:not(:first-child) .item {
+      margin-top: 20px;
+    }
+
+    .item {
+      padding: 0 25px;
+    }
+
+    // Animation
+
+    .submenu-enter {
+      max-height: 0 !important;
+    }
+    .submenu-enter-active {
+      max-height: 232px !important;
+      transition: max-height 200ms linear;
+    }
+    .submenu-enter-done {
+      max-height: 232px !important;
+      overflow-y: auto !important;
+      padding: 0 25px 0 22px !important;
+    }
+    .submenu-exit {
+      max-height: 232px !important;
+    }
+    .submenu-exit-active {
+      max-height: 0 !important;
+      transition: max-height 200ms linear;
+    }
+    &.open .l-icon {
+      transform: rotate(90deg);
+      transition: transform 200ms linear;
+    }
+    & .l-icon {
+      transform: rotate(0deg);
+      transition: transform 200ms linear;
+    }
+
+    //
+
+    ul {
+      width: 100%;
+      padding: 0 25px 0 25px;
+      margin-top: 20px;
+      overflow: hidden;
+      direction: rtl;
+
+      li {
+        padding-left: 40px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+
+      &::-webkit-scrollbar {
+        width: 4px;
+        position: absolute;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    }
+  }
+}
