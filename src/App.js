@@ -1,17 +1,29 @@
 import React from 'react';
-import './index.scss';
-import "./icons/css/all.css"
-import { CSSTransition } from "react-transition-group"
+import NoteList from "./components/Notes/NoteList"
+import Toolbar from "./components/Toolbar"
 
-import Navbar from "./components/nav/Navbar"
+export default class App extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = { notes: null, isLoading: true }
+    }
 
-function App() {
+    componentDidMount() {
+        fetch('https://jsonplaceholder.typicode.com/todos?_limit=12')
+            .then(response => response.json())
+            .then(json => {
+                setTimeout(() => {
+                    this.setState({ notes: json, isLoading: false })
+                }, 500)
+            })
+    }
 
-  return (
-    <>
-      <Navbar />
-    </>
-  )
+    render() {
+        return (
+            <div className="container main-content">
+                <Toolbar />
+                <NoteList notes={this.state.notes} isLoading={this.state.isLoading} />
+            </div>
+        )
+    }
 }
-
-export default App;
