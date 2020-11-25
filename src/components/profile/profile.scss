@@ -1,0 +1,98 @@
+@import "../../config.scss";
+
+.profile {
+    padding: 18px;
+    color: #FFFFFF;
+    background-image: $accent-gradient;
+}
+
+.profile__headline {
+    padding: 12px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile__greeting-title {
+    font-size: 20px;
+    font-family: Opensans medium;
+}
+
+.profile__greeting__task-quantity {
+    font-size: 13px;
+    line-height: 1;
+    color: #F1F1F1;
+}
+
+.profile__picture {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.4);
+}
+
+.profile__reminder {
+    background-color: rgba(256, 256, 256, 0.25);
+    margin-top: 18px;
+    padding: 24px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.profile__reminder-dismiss {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 22px;
+}
+
+.profile__reminder-icon {
+    margin-right: 24px;
+    transition: all 100ms
+}
+
+@include media-breakpoint-up(sm) {
+    .profile__reminder:hover .profile__reminder-icon {
+        animation: rotateBell 350ms infinite linear;
+    }
+}
+
+.profile__reminder-title {
+    font-size: 22px;
+}
+
+
+.profile__reminder-task {
+    font-size: 14px;
+}
+
+.profile__reminder-time {
+    font-size: 14px;
+    margin-left: 18px;
+}
+
+@keyframes rotateBell {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(2.5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    75% {
+        transform: rotate(2.5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}

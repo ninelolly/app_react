@@ -1,0 +1,63 @@
+@import "../../config.scss";
+
+.toolbar-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.toolbar-container {
+    position: relative;
+}
+
+@include media-breakpoint-down(sm) {
+    .toolbar-container {
+        padding: 0px !important;
+    }
+}
+
+.toolbar {
+    background: #ffffff;
+    z-index: 100;
+    bottom: 0;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 48px;
+}
+
+.toolbar-link {
+    color: #C6C6C8;
+    text-align: center;
+    transition: all 120ms;
+
+    i {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 24px;
+    }
+
+    &:hover {
+        color: #5F87E7
+    }
+
+    &.active {
+        color: #5F87E7
+    }
+}
+
+.toolbar__create-task {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f81eaf;
+    color: #ffffff;
+    font-size: 20px;
+    transform: translateY(-40px);
+    box-shadow: 0px 6px 10px rgba(244, 86, 195, 0.6);
+}

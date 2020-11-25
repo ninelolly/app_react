@@ -1,0 +1,112 @@
+@import "../../config.scss";
+
+.task-list {
+    padding: 0 18px;
+    margin: 36px 0;
+}
+
+@include media-breakpoint-up(sm) {
+    .task-list {
+        padding: 0;
+    }
+}
+
+.task {
+    background-color: #FFFFFF;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid;
+
+    &.personal {
+        border-color: #FFD506;
+    }
+
+    &.work {
+        border-color: #1ED102;
+    }
+
+    &.meeting {
+        border-color: #ff077b;
+    }
+
+    &.shopping {
+        border-color: #eb7d2a;
+    }
+
+    &.party {
+        border-color: #20c0e0;
+    }
+
+    &.study {
+        border-color: #da3ea6;
+    }
+
+    &.remind {
+        .task-remind {
+            color: #FFD506;
+        }
+    }
+
+    &.done {
+        .task__checkbox-fake {
+            border-color: #91DC5A;
+            background: #91DC5A;
+
+            & i {
+                display: block;
+            }
+        }
+    }
+}
+
+.task+.task {
+    margin-top: 12px;
+}
+
+.task__checkbox-real {
+    display: none;
+}
+
+.task__checkbox-fake {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #B5B5B5;
+    border-radius: 50%;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & i {
+        display: none;
+        color: #FFFFFF;
+        font-size: 12px;
+    }
+}
+
+.task-time {
+    white-space: nowrap;
+    margin-left: 18px;
+    color: #C6C6C8;
+    font-size: 14px;
+    margin-bottom: -2px;
+    font-family: Roboto light;
+}
+
+.task-name {
+    flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0px 18px;
+    color: #666666;
+}
+
+.task-remind {
+    color: #D9D9D9;
+    font-size: 18px;
+}

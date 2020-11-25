@@ -1,0 +1,107 @@
+@import "../../config.scss";
+
+.task-create {
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+    padding: 18px 36px;
+    padding-top: 64px;
+    background: #ffffff;
+    width: calc(100% - 24px);
+    border-top-left-radius: 50% 15%;
+    border-top-right-radius: 50% 15%;
+    border-top: 1px solid #5F87E7;
+}
+
+@include media-breakpoint-down(sm) {
+    .task-create {
+        left: 0;
+        width: 100%;
+    }
+}
+
+.task-create__btn {
+    width: auto;
+    min-width: 300px;
+    max-width: 400px;
+    background-image: linear-gradient(50deg, #81C7F5 -30%, #3867D5 140%);
+    background-size: 100%;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 5px;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0px 3px 6px rgba(104, 148, 238, 0.6);
+    transition: all 120ms;
+}
+
+.task-create__date {
+    margin-bottom: 48px;
+    margin-top: 24px;
+    color: #454545;
+}
+
+.task-create__date-title {
+    margin-bottom: 12px;
+    font-family: Roboto light;
+    transition: all 120ms;
+
+    & i {
+        margin-left: 24px;
+        font-size: 14px;
+    }
+
+    &:hover {
+        color: #5F87E7;
+    }
+}
+
+.task-create__types {
+    padding: 12px 0px;
+    display: flex;
+    overflow-x: auto;
+    list-style-type: none;
+}
+
+.task-create__type {
+    color: #8E8E8E;
+    display: flex;
+    align-items: center;
+
+    &:before {
+        content: "";
+        width: 7px;
+        height: 8px;
+        margin-right: 15px;
+        border-radius: 50%;
+    }
+
+    &:nth-child(1):before {
+        background-color: #FFD506;
+    }
+
+    &:nth-child(2):before {
+        background-color: #1ED102;
+    }
+
+    &:nth-child(3):before {
+        background-color: #ff077b;
+    }
+
+    &:nth-child(4):before {
+        background-color: #da3ea6;
+    }
+
+    &:nth-child(5):before {
+        background-color: #eb7d2a;
+    }
+
+    &:nth-child(6):before {
+        background-color: #20c0e0;
+    }
+}
+
+.task-create__type+.task-create__type {
+    margin-left: 36px;
+}

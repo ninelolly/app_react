@@ -12,7 +12,7 @@ $grid-gutter-width: 24px;
 $gutter: $grid-gutter-width;
 
 $dark-text: #575d73;
-$light-text: #7e86a1;
+$light-text: #b7bccc;
 
 $dark: #444444;
 $blue-gray: #607d8b;
@@ -46,103 +46,8 @@ $amber: #ffc107;
 $yellow: #ffeb3b;
 $lime: #cddc39;
 
-// Import section
+$accent-gradient: linear-gradient(-40deg, #81C7F5 0%, #3867D5 140%);
+
 @import "node_modules/bootstrap/scss/bootstrap-reboot.scss";
 @import "node_modules/bootstrap/scss/mixins/_breakpoints.scss";
 @import "node_modules/bootstrap/scss/bootstrap-grid.scss";
-@import "node_modules/bootstrap/scss/bootstrap.scss";
-@import "./icons/css/all.css";
-
-// Fonts section
-@mixin font($fname, $url) {
-  @font-face {
-    font-family: $fname;
-    src: url($url) format("truetype");
-  }
-}
-
-@include font(Roboto normal, "./fonts/Roboto/Roboto-Regular.ttf");
-@include font(Roboto normal-italic, "./fonts/Roboto/Roboto-Italic.ttf");
-@include font(Roboto medium, "./fonts/Roboto/Roboto-Medium.ttf");
-@include font(Roboto bold, "./fonts/Roboto/Roboto-Bold.ttf");
-@include font(Opensans normal, "./fonts/Opensans/OpenSans-Regular.ttf");
-@include font(Opensans medium, "./fonts/Opensans/OpenSans-SemiBold.ttf");
-@include font(Opensans bold, "./fonts/Opensans/OpenSans-Bold.ttf");
-
-// General section
-::placeholder {
-  color: inherit
-}
-
-input,
-textarea {
-  outline: none;
-}
-
-.checkbox {
-  height: 16px;
-  width: 16px;
-}
-
-.-btn {
-  background-color: transparent;
-  color: inherit;
-  border: none;
-
-  &:focus {
-    outline: none;
-  }
-}
-
-body {
-  font-family: Roboto normal, sans-serif;
-  font-size: $fontsize;
-  line-height: $lineheight;
-  color: $textcolor;
-  min-width: 320px;
-  position: relative;
-  overflow-x: hidden;
-}
-
-.-btn- {
-
-  &primary {
-    background-color: $accent;
-    color: #ffffff;
-    border: 1px solid $accent;
-
-    &:hover {
-      background-color: $blue;
-      color: #ffffff;
-    }
-  }
-
-  &light {
-    color: $accent;
-    border: 1px solid $accent;
-
-    &:hover {
-      background-color: $accent;
-      color: #ffffff;
-    }
-  }
-
-  &red {
-    color: $red;
-    border: 1px solid $red;
-
-    &:hover {
-      background-color: $red;
-      color: #ffffff;
-    }
-  }
-
-}
-
-.-red {
-  color: $red
-}
-
-.-green {
-  color: $green
-}
